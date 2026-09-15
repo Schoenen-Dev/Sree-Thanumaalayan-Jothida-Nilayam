@@ -1,0 +1,190 @@
+:root {
+  --color-cream-50: #fefce8;
+  --color-amber-200: #fef08a;
+  --color-navy-950: #0a0e1a;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+.planetary-system {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.planetary-system__stars {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.star-field-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.star-field {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.planetary-system__svg {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* Twinkle keyframe for stars */
+@keyframes star-twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.3);
+  }
+}
+
+/* Shooting / Moving Stars animation */
+.shooting-stars-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.shooting-star {
+  position: absolute;
+  width: 140px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(251, 191, 36, 0.7) 40%, transparent 100%);
+  transform-origin: left center;
+  transform: rotate(-35deg);
+  opacity: 0;
+  animation-name: shoot-star;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  animation-iteration-count: infinite;
+}
+
+@keyframes shoot-star {
+  0% {
+    transform: rotate(-35deg) translateX(0) scaleX(0);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+    transform: rotate(-35deg) translateX(30px) scaleX(1);
+  }
+  25% {
+    opacity: 0.7;
+    transform: rotate(-35deg) translateX(180px) scaleX(1.4);
+  }
+  35% {
+    opacity: 0;
+    transform: rotate(-35deg) translateX(280px) scaleX(0.2);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-35deg) translateX(280px) scaleX(0);
+  }
+}
+
+/* Planet glow pulse */
+.planet-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow-pulse {
+  0% {
+    opacity: 0.25;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 0.65;
+    transform: scale(1.15);
+  }
+}
+
+/* Orbit ring gentle styling */
+.orbit-ring {
+  transition: stroke 0.3s ease;
+}
+
+.orbit-ring:hover {
+  stroke: rgba(245, 215, 130, 0.45);
+}
+
+/* Golden Astrolabe Specular Lens Flare */
+.astrolabe-flare {
+  position: absolute;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.astrolabe-flare__core {
+  position: absolute;
+  inset: 38%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 0%, #fef08a 35%, #eab308 75%, transparent 100%);
+  filter: blur(1px);
+  animation: flare-pulse 3s ease-in-out infinite alternate;
+}
+
+.astrolabe-flare__streak {
+  position: absolute;
+  top: 50%;
+  left: -60px;
+  right: -60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(254, 240, 138, 0.2) 20%, #ffffff 50%, rgba(254, 240, 138, 0.2) 80%, transparent 100%);
+  transform: translateY(-50%) rotate(-25deg);
+  filter: blur(0.5px);
+}
+
+.astrolabe-flare__streak-vert {
+  position: absolute;
+  left: 50%;
+  top: -45px;
+  bottom: -45px;
+  width: 2px;
+  background: linear-gradient(180deg, transparent 0%, rgba(254, 240, 138, 0.2) 20%, #ffffff 50%, rgba(254, 240, 138, 0.2) 80%, transparent 100%);
+  transform: translateX(-50%) rotate(-25deg);
+  filter: blur(0.5px);
+}
+
+.astrolabe-flare__halo {
+  position: absolute;
+  inset: 12%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(254, 240, 138, 0.6) 0%, rgba(234, 179, 8, 0.3) 45%, transparent 75%);
+  filter: blur(10px);
+}
+
+@keyframes flare-pulse {
+  0% {
+    transform: scale(0.88);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+}
+

@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cinzel', serif;
+    --font-sans: 'Plus Jakarta Sans', 'Noto Sans Tamil', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-tamil: 'Noto Sans Tamil', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #242220;
+    background-color: #fcfaf7;
+  }
+
+  h1, h2, h3, .font-cinzel {
+    font-family: var(--font-serif);
+  }
+
+  .tamil-text {
+    font-family: var(--font-tamil);
+    line-height: 1.65;
+  }
+}
+
+/* Subtle traditional cosmic & gold accents */
+.bg-maroon-gradient {
+  background: linear-gradient(135deg, #420a16 0%, #631222 50%, #2b0b18 100%);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa8222 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-gold-subtle {
+  border-color: rgba(212, 175, 55, 0.25);
+}
+
+.bg-cream-warm {
+  background-color: #fcfaf7;
+}
+
+.bg-cream-card {
+  background-color: #f8f4ee;
+}
