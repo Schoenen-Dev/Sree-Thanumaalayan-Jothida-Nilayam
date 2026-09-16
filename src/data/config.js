@@ -7,7 +7,10 @@ export const BUSINESS_CONFIG = {
   phoneClean: "9487306953",
   whatsappNumber: "919487306953",
   whatsappBaseUrl: "https://wa.me/919487306953",
-  domain: "https://sreethanumaalayanastrology.com/",
+  logo: "../assets/images/sreethanumaalayanastrology-logo.webp",
+  logoAlt: "Sree Thanumaalayan Jothida Nilayam Logo",
+  siteIcon: "../assets/images/sree-thanumaalayan-astrology-site-icon.webp",
+  domain: "https://www.sreethanumaalayanastrology.com/",
   address: {
     street: "7/44, Dharmapuram",
     locality: "Ethamoly",

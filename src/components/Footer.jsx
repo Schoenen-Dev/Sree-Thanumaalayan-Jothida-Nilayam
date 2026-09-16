@@ -42,9 +42,15 @@ export const Footer = () => {
           {/* Column 1: About & Location */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400 border border-amber-400/40">
-                <Compass className="w-4 h-4" />
-              </div>
+              <Link to="/" className="flex items-center gap-2.5 group min-w-0 shrink-0">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden flex items-center justify-center  flex-shrink-0 group-hover:scale-105 transition-transform ">
+                          <img 
+                            src={BUSINESS_CONFIG.logo} 
+                            alt={BUSINESS_CONFIG.logoAlt || BUSINESS_CONFIG.englishName} 
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        </Link>
               <span className="font-serif font-bold text-amber-200 text-base">
                 {BUSINESS_CONFIG.englishName}
               </span>

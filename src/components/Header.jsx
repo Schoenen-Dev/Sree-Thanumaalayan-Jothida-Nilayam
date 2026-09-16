@@ -60,8 +60,12 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 xl:px-8 py-2.5 flex items-center gap-6">
         {/* Brand / Logo */}
         <Link to="/" className="flex items-center gap-2.5 group min-w-0 shrink-0">
-          <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gradient-to-br from-[#6b1426] to-[#3a0914] flex items-center justify-center text-amber-300 shadow-sm border border-amber-400/30 flex-shrink-0 group-hover:scale-105 transition-transform">
-            <Sparkles className="w-5 h-5 text-amber-300" />
+          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden flex items-center justify-center  flex-shrink-0 group-hover:scale-105 transition-transform ">
+            <img 
+              src={BUSINESS_CONFIG.logo} 
+              alt={BUSINESS_CONFIG.logoAlt || BUSINESS_CONFIG.englishName} 
+              className="w-full h-full object-cover"
+            />
           </div>
           <div>
             <span className="block font-bold text-sm sm:text-base text-[#540d1c] font-serif leading-tight truncate">

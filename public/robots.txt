@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sreethanumaalayanjothidam.com/sitemap.xml
+Sitemap: https://www.sreethanumaalayanastrology.com/sitemap.xml
